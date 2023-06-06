@@ -1,0 +1,44 @@
+---
+import reactIcon from '@images/react.svg';
+import cssIcon from '@images/css.svg';
+import jsIcon from '@images/javascript.svg';
+import htmlIcon from '@images/html.svg';
+---
+
+<div class="skills">
+	<div class="image">
+		<img src={reactIcon} alt="" width="100px" />
+	</div>
+
+	<div class="image">
+		<img src={cssIcon} alt="" width="100px" />
+	</div>
+
+	<div class="image">
+		<img src={jsIcon} alt="" width="100px" />
+	</div>
+
+	<div class="image">
+		<img src={htmlIcon} alt="" width="100px" />
+	</div>
+</div>
+
+<style lang="scss">
+	.skills {
+		display: grid;
+		gap: var(--s-2-4);
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		justify-content: center;
+		align-items: center;
+
+		.image {
+			width: 100%;
+
+			img {
+				margin: 0 auto;
+				border-radius: 0.8rem;
+				overflow: hidden;
+			}
+		}
+	}
+</style>

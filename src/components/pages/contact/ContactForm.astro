@@ -1,0 +1,63 @@
+---
+import Alert from '@components/Alert.astro';
+import Button from '@components/Button.astro';
+---
+
+<Alert type="error">error message</Alert>
+<Alert type="success">success message</Alert>
+
+<form class="form" action={`${import.meta.env.API_HOST}/api/send`} method="post">
+	<div class="row">
+		<label for="name" class="label">
+			Your name <span class="required">(required)</span>
+		</label>
+		<input id="name" type="text" class="input" required />
+	</div>
+
+	<div class="row">
+		<label for="email" class="label">
+			Your email address <span class="required">(required)</span>
+		</label>
+		<input id="email" type="email" class="input" required />
+	</div>
+
+	<div class="row">
+		<label for="message" class="label">
+			Your message <span class="required">(required)</span>
+		</label>
+		<textarea id="message" class="input" rows={5} required></textarea>
+	</div>
+
+	<Button>Send your message</Button>
+</form>
+
+<style lang="scss">
+	.form {
+		display: grid;
+		gap: var(--s-4);
+	}
+
+	.row {
+		display: grid;
+		gap: var(--s-1);
+	}
+
+	.label {
+		display: block;
+		font-weight: var(--fw-bold);
+	}
+
+	.input {
+		width: 100%;
+		padding: var(--s-2);
+		border-radius: var(--s-0);
+		border: 1px solid var(--c-text);
+		background: var(--c-input-bg);
+	}
+
+	.required {
+		color: var(--c-accent);
+		font-weight: var(--fw-regular);
+		font-size: var(--fs-caption);
+	}
+</style>

@@ -1,0 +1,73 @@
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+	line-height: 1.15;
+}
+
+html {
+	font-size: 62.5%;
+	color: var(--c-text);
+}
+
+body {
+	font-size: var(--fs-body);
+	font-weight: var(--fw-regular);
+	font-family: 'Poppins', sans-serif;
+}
+
+label {
+	font-size: var(--fs-nav);
+}
+
+button {
+	font-size: var(--fs-nav);
+	font-weight: var(--fw-semi-bold);
+}
+
+h1,
+.h1 {
+	font-size: var(--fs-h1);
+	font-weight: var(--fw-bold);
+
+	&.hero {
+		font-size: var(--fs-h1-hero);
+	}
+}
+
+h2,
+.h2 {
+	font-size: var(--fs-h2);
+	font-weight: var(--fw-bold);
+}
+
+h3,
+.h3 {
+	font-size: var(--fs-h3);
+	font-weight: var(--fw-bold);
+}
+
+h4,
+.h4 {
+	font-size: var(--fs-h4);
+	font-weight: var(--fw-semi-bold);
+}
+
+.subtitle {
+	font-size: var(--fs-h3);
+	font-weight: var(--fw-light);
+	color: var(--c-accent);
+	line-height: 1.25;
+}
+
+.accent-text {
+	color: var(--c-accent);
+}
+
+p {
+	max-width: var(--max-readable-width);
+}

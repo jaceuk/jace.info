@@ -1,0 +1,70 @@
+---
+import data from '@data/contact.json';
+import Marty from '@images/marty.jpg';
+import MartyDark from '@images/marty-dark.jpg';
+import HeroImage from '@components/HeroImage.astro';
+import Card from '@components/Card.astro';
+import ContactForm from './Form';
+---
+
+<main class="with-gradient">
+	<div class="inner-wrapper">
+		<div class="contact">
+			<div class="intro">
+				<h1>{data.title}</h1>
+				<p>{data.text}</p>
+			</div>
+
+			<div class="container">
+				<div class="formContainer">
+					<Card>
+						<h2 class="h3">Enquiry form</h2>
+						<ContactForm client:load />
+					</Card>
+				</div>
+
+				<HeroImage image={Marty} darkImage={MartyDark} />
+			</div>
+		</div>
+	</div>
+</main>
+
+<style lang="scss">
+	.contact {
+		display: grid;
+		gap: var(--s-4-5);
+		width: 100%;
+
+		.intro {
+			display: grid;
+			gap: var(--s-2-4);
+		}
+	}
+
+	.formContainer {
+		max-width: 750px;
+		min-width: 100%;
+		width: 100%;
+
+		@media (min-width: 768px) {
+			min-width: 450px;
+		}
+
+		p {
+			flex-grow: 1;
+		}
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: var(--s-2-4);
+		justify-content: space-between;
+		align-items: center;
+
+		@media (min-width: 768px) {
+			flex-direction: row;
+			align-items: flex-end;
+		}
+	}
+</style>

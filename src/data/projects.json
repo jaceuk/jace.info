@@ -1,0 +1,73 @@
+{
+	"title": "Projects",
+	"text": "I've lost count of the amount of projects I've worked on but here are some examples of my more recent ones. Unless otherwise stated I was responsible for all aspects of design and build for each project.",
+	"projects": [
+		{
+			"title": "Dogs to Adopt",
+			"slug": "dogs-to-adopt",
+			"type": "Website",
+			"intro": "A website to help abandoned dogs find new homes by allowing users to search dog shelters in their area.",
+			"tech": [
+				"HTML",
+				"React",
+				"CSS/Sass",
+				"Handlebars",
+				"Javascript",
+				"NodeJS",
+				"MySQL",
+				"UX/UI",
+				"REST API",
+				"Express"
+			],
+			"date": "2222-09-22",
+			"lighthouseScores": [90, 98, 97, 100]
+		},
+		{
+			"title": "ESO Builder",
+			"slug": "eso-builder",
+			"type": "Web app",
+			"intro": "A companion web app to support The Elder Scrolls Online, a popular massively multiplayer online roleplaying game.",
+			"tech": [
+				"HTML",
+				"React",
+				"CSS/Sass",
+				"JavaScript",
+				"MySQL",
+				"PHP",
+				"REST API",
+				"Slim",
+				"UX/UI"
+			],
+			"date": "2023-10-30",
+			"lighthouseScores": [93, 97, 100, 100]
+		},
+		{
+			"title": "VIP Dine",
+			"slug": "vip-dine",
+			"type": "Website",
+			"intro": "A brochureware website for a company that offers a low cost way for restaurants to take online reservations and food orders.",
+			"tech": ["HTML", "React", "CSS/Sass", "JavaScript", "Gatsby", "UX/UI", "Stripe"],
+			"date": "2222-09-21",
+			"lighthouseScores": [92, 95, 92, 90]
+		},
+		{
+			"title": "EVO Home Services",
+			"slug": "evo-home-services",
+			"type": "Website",
+			"intro": "High perfoming bespoke websites with the specific goal of going head-to-head with the competition in Google local searches.",
+			"tech": [
+				"HTML",
+				"CSS/Sass",
+				"JavaScript",
+				"PHP",
+				"MySQL",
+				"SEO",
+				"UX/UI",
+				"Slim",
+				"REST API"
+			],
+			"date": "2222-09-19",
+			"lighthouseScores": [93, 88, 83, 91]
+		}
+	]
+}

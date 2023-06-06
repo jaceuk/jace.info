@@ -1,0 +1,29 @@
+---
+import data from '@data/projects.json';
+import Project from './Project.astro';
+---
+
+<section class="with-gradient">
+	<div class="inner-wrapper">
+		<div class="projects">
+			<div class="intro">
+				<h1>{data.title}</h1>
+				<p>{data.text}</p>
+			</div>
+
+			{data.projects.map((project) => <Project {project} />)}
+		</div>
+	</div>
+</section>
+
+<style lang="scss">
+	.projects {
+		display: grid;
+		gap: var(--s-4-5);
+
+		.intro {
+			display: grid;
+			gap: var(--s-2-4);
+		}
+	}
+</style>

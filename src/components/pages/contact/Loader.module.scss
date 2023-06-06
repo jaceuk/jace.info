@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  gap: var(--s-3);
+  align-items: center;
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  margin: var(--s-2);
+  color: var(--c-white);
+  text-align: center;
+}

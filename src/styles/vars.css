@@ -1,0 +1,113 @@
+:root {
+	/* spacing */
+	--s-0: 0.4rem;
+	--s-1: 0.8rem;
+	--s-2: 1.6rem;
+	--s-3: 2.4rem;
+	--s-4: 3.2rem;
+	--s-5: 6.4rem;
+	--s-6: 12.8rem;
+
+	/* responsive spacing */
+	/* based on viewport fom min 375px to max 1200px */
+	/* https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport */
+	--s-1-2: clamp(var(--s-1), 0.4364rem + 0.9697vw, var(--s-2));
+	--s-1-4: clamp(var(--s-1), -0.2909rem + 2.9091vw, var(--s-4));
+	--s-2-4: clamp(var(--s-2), 0.8727rem + 1.9394vw, var(--s-4));
+	--s-2-5: clamp(var(--s-2), -0.5818rem + 5.8182vw, var(--s-5));
+	--s-4-5: clamp(var(--s-4), 1.7455rem + 3.8788vw, var(--s-5));
+
+	/* colour tokens */
+	--c-text: var(--c-grey-dark);
+	--c-divider: var(--c-grey-pale);
+	--c-paper: var(--c-white);
+	--c-card: var(--c-white);
+	--c-card-shadow: #00000025;
+	--c-accent: var(--c-red-dark);
+	--c-lighthouseGood: var(--c-green);
+	--c-lighthouseGoodDark: var(--c-green-dark);
+	--c-lighthouseGoodPale: var(--c-green-pale);
+	--c-lighthouseAverage: var(--c-orange);
+	--c-lighthouseAverageDark: var(--c-orange-dark);
+	--c-lighthouseAveragePale: var(--c-orange-pale);
+	--c-lighthousePoor: var(--c-red);
+	--c-lighthousePoorDark: var(--c-red-dark);
+	--c-lighthousePoorPale: var(--c-red-pale);
+	--c-input-bg: var(--c-white);
+
+	--c-alert-success-text: var(--c-green-dark);
+	--c-alert-success-bg: var(--c-green-pale);
+	--c-alert-success-border: var(--c-green-pale);
+	--c-alert-error-text: var(--c-red-dark);
+	--c-alert-error-bg: var(--c-red-pale);
+	--c-alert-error-border: var(--c-red-pale);
+
+	/* colours */
+
+	--c-grey-dark: #333;
+	--c-grey-pale: #f2f2f2;
+	--c-nearly-black: #252525;
+	--c-black: #18181a;
+	--c-black-pure: #000;
+	--c-white: #fff;
+
+	--c-red: #f33;
+	--c-red-dark: #c00;
+	--c-red-pale: #ffebeb;
+
+	--c-green: #00cc66;
+	--c-green-dark: #026918;
+	--c-green-pale: #e6faf0;
+
+	--c-orange: #ffaa33;
+	--c-orange-dark: #c33300;
+	--c-orange-pale: #fff7eb;
+
+	/* font size */
+	--fs-h1-hero: clamp(5.2rem, 2.6182rem + 5.8182vw, 9.6rem);
+	--fs-h1: clamp(4.8rem, 2.6182rem + 5.8182vw, 6.4rem);
+	--fs-h2: clamp(3.2rem, 2.4727rem + 1.9394vw, 4.8rem);
+	--fs-h3: clamp(2.4rem, 1.8545rem + 1.4545vw, 3.6rem);
+	--fs-h4: clamp(2rem, 1.5455rem + 1.2121vw, 3rem);
+	--fs-body: clamp(1.6rem, 1.4182rem + 0.4848vw, 2rem);
+	--fs-nav: clamp(1.6rem, 1.5091rem + 0.2424vw, 1.8rem);
+	--fs-small: clamp(1.4rem, 1.3091rem + 0.2424vw, 1.6rem);
+	--fs-caption: clamp(1.2rem, 1.1091rem + 0.2424vw, 1.4rem);
+
+	/* font weight */
+	--fw-light: 300;
+	--fw-regular: 400;
+	--fw-medium: 500;
+	--fw-semi-bold: 600;
+	--fw-bold: 700;
+	--fw-black: 900;
+
+	/* misc */
+	--max-readable-width: 750px;
+	--transition: color 0.2s ease;
+	--section-background: linear-gradient(180deg, var(--c-divider) 0%, var(--c-paper) var(--s-4-5));
+}
+
+html.dark {
+	--c-text: var(--c-white);
+	--c-divider: var(--c-grey-dark);
+	--c-paper: var(--c-black);
+	--c-card: var(--c-black);
+	--c-card-shadow: #ffffff50;
+	--c-accent: var(--c-red);
+	--c-lighthouseGoodPale: var(--c-black);
+	--c-lighthouseGoodDark: var(--c-green);
+	--c-lighthousePoorPale: var(--c-black);
+	--c-lighthousePoorDark: var(--c-red);
+	--c-lighthouseAveragePale: var(--c-black);
+	--c-lighthouseAverageDark: var(--c-orange);
+	--c-input-bg: var(--c-black-pure);
+	--c-alert-success-text: var(--c-green);
+	--c-alert-success-bg: var(--c-black);
+	--c-alert-success-border: var(--c-green);
+	--c-alert-error-text: var(--c-red);
+	--c-alert-error-bg: var(--c-black);
+	--c-alert-error-border: var(--c-red);
+
+	--section-background: linear-gradient(180deg, var(--c-divider) 0%, var(--c-paper) var(--s-4-5));
+}

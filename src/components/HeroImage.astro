@@ -1,0 +1,53 @@
+---
+const { image, darkImage } = Astro.props;
+---
+
+<div class="image">
+	<img class="light-image" src={image} alt="" />
+	<img class="dark-image" src={darkImage} alt="" />
+</div>
+
+<style lang="scss">
+	.image {
+		width: 100%;
+		max-width: 520px;
+		position: relative;
+		aspect-ratio: 1;
+		border-radius: var(--s-2-4);
+		overflow: hidden;
+
+		@media (min-width: 768px) {
+			order: 2;
+		}
+	}
+
+	.dark-image {
+			display: block;
+	}
+
+	.light-image {
+			display: none;
+	}
+
+	html.dark {
+
+		.light-image {
+			display: none;
+		}
+
+		.dark-image {
+			display: block;
+		}
+	}
+
+	html.light {
+
+		.dark-image {
+			display: none;
+		}
+
+		.light-image {
+			display: block;
+		}
+	}
+</style>

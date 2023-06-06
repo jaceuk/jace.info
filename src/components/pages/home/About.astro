@@ -1,0 +1,77 @@
+---
+import SkillIcons from '@components/pages/home/SkillIcons.astro';
+import data from '@data/about.json';
+import Card from '@components/Card.astro';
+---
+
+<section class="with-gradient">
+	<div class="inner-wrapper">
+		<div class="about">
+			<div class="intro">
+				<h2>{data.title}</h2>
+				<p>{data.text}</p>
+			</div>
+			<div class="sections">
+				{
+					data.sections.map((section) => (
+						<Card>
+							<h3>{section.title}</h3>
+
+							{section.text.map((paragraph) => (
+								<p>{paragraph}</p>
+							))}
+
+							{section.icons === 'skills' && <SkillIcons />}
+						</Card>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>
+
+<style lang="scss">
+	.about {
+		display: grid;
+		gap: var(--s-4-5);
+
+		.intro {
+			display: grid;
+			gap: var(--s-2-4);
+		}
+
+		.sections {
+			display: grid;
+			gap: var(--s-4-5);
+
+			@media (min-width: 768px) {
+				grid-template-columns: 1fr 1fr;
+				align-items: start;
+			}
+
+			.section {
+				display: grid;
+				gap: var(--s-2-4);
+				width: 100%;
+			}
+		}
+
+		.skills {
+			display: grid;
+			gap: var(--s-2-4);
+			grid-template-columns: 1fr 1fr;
+			justify-content: center;
+			align-items: center;
+
+			.image {
+				width: 100%;
+
+				img {
+					margin: 0 auto;
+					border-radius: 0.8rem;
+					overflow: hidden;
+				}
+			}
+		}
+	}
+</style>

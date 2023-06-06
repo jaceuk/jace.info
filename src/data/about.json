@@ -1,0 +1,35 @@
+{
+	"title": "About me",
+	"text": "I'm a Front End Developer with an eye for UX and a passion for accessibility and helping people.",
+	"sections": [
+		{
+			"title": "Front end developer",
+			"text": [
+				"I'm a passionate Front End Developer with over 20 years experience who focuses on writing clean, reusable, standards compliant code with accessibility and best practice firmly in mind.",
+				"With over two decades of experience I've worked with many technology stacks however my passion has always been the front end and overall user experience."
+			]
+		},
+		{
+			"title": "Accessiblity advocate",
+			"text": [
+				"I'm passionate about making the web a better place for everyone, regardless of any disability.",
+				"I'm an outspoken champion for accessibility. Aside from being the right thing to do good accessibility typically leads to a better experience for everyone."
+			]
+		},
+		{
+			"title": "Core skills",
+			"icons": "skills",
+			"text": [
+				"I'm always playing with new technologies and frameworks however my core front end technical skills are HTML, CSS, JavaScript and React.",
+				"I also have a wide range of additional development/design skills and experience."
+			]
+		},
+		{
+			"title": "Certified geek",
+			"text": [
+				"There, I said it!",
+				"I'm in to all sorts of geeky things however my particular passion is Sci-Fi. Whether it's Star Trek, Star Wars or just Sci-Fi in general, I'm into it all."
+			]
+		}
+	]
+}

@@ -1,0 +1,49 @@
+---
+import { CheckCircle } from 'iconoir-react';
+import { WarningCircle } from 'iconoir-react';
+const { type } = Astro.props;
+---
+
+<div class={`container ${type}`} role={type === 'error' ? 'alert' : undefined}>
+	<div class="iconContainer">
+		{type === 'success' && <CheckCircle />}
+		{type === 'error' && <WarningCircle />}
+	</div>
+	<p class="textContainer"><slot /></p>
+</div>
+
+<style lang="scss">
+	.container {
+		display: flex;
+		gap: var(--s-2);
+		align-items: flex-start;
+		padding: var(--s-2);
+		color: var(--c-paper);
+		border-radius: var(--s-1);
+		font-size: var(--fs-nav);
+		border: 1px solid black;
+
+		&.success {
+			background-color: var(--c-alert-success-bg);
+			color: var(--c-alert-success-text);
+			border-color: var(--c-alert-success-border);
+		}
+
+		&.error {
+			background-color: var(--c-alert-error-bg);
+			color: var(--c-alert-error-text);
+			border-color: var(--c-alert-error-border);
+		}
+
+		.iconContainer {
+			height: 40px;
+			min-width: 40px;
+		}
+
+		.textContainer {
+			min-height: 40px;
+			display: flex;
+			align-items: center;
+		}
+	}
+</style>

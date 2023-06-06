@@ -1,0 +1,79 @@
+---
+import { HalfMoon } from 'iconoir-react';
+import { SunLight } from 'iconoir-react';
+---
+
+<script>
+  interface ButtonProps extends HTMLButtonElement {
+		dataset: {
+			theme: string;
+		}
+	}
+
+	function updateTheme(value: string) {
+    const theme = value === "system" ? systemTheme : value;
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme);
+    localStorage.setItem("theme", value);
+  }
+
+  const theme = localStorage.getItem("theme") || 'light';
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+
+	const lightModeButton = document.querySelector('.light-button') as ButtonProps;
+	const darkModeButton = document.querySelector('.dark-button') as ButtonProps;
+
+	[lightModeButton, darkModeButton].forEach(item => {
+  item?.addEventListener('click', () => {
+    updateTheme(item.dataset.theme);
+  })
+
+	updateTheme(theme)
+})
+</script>
+
+<button class="light-button" data-theme="light"><SunLight /><span class="sr-only">Enable light mode</span></button>
+<button class="dark-button" data-theme="dark"><HalfMoon /><span class="sr-only">Enable dark mode</span></button>
+
+<style lang="scss">
+	button {
+		border: none;
+		background: none;
+		padding: 0;
+		display: flex;
+		padding: var(--s-1-2);
+		color: var(--c-text);
+	}
+
+	.light-button {
+			display: block;
+	}
+
+	.dark-button {
+			display: none;
+	}
+
+	html.dark {
+
+		.dark-button {
+			display: none;
+		}
+
+		.light-button {
+			display: block;
+		}
+	}
+
+	html.light {
+
+		.light-button {
+			display: none;
+		}
+
+		.dark-button {
+			display: block;
+		}
+	}
+</style>

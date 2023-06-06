@@ -1,0 +1,157 @@
+---
+import ThemeChanger from './ThemeChanger.astro';
+---
+
+<script>
+	const pathName = window.location.pathname;
+	const homeButton = document.querySelector('.link [href="/"]');
+	const projectsButton = document.querySelector('.link [href="/projects"]');
+	const contactButton = document.querySelector('.link [href="/contact"]');
+
+	if (pathName === '/') homeButton?.parentElement?.classList.add('active');
+	if (pathName === '/projects') projectsButton?.parentElement?.classList.add('active');
+	if (pathName === '/contact') contactButton?.parentElement?.classList.add('active');
+</script>
+
+<header>
+	<div class="inner-wrapper">
+		<div class="navbar">
+			<div class="logoContainer">
+				<a href="/" class="logo">
+					<svg viewBox="0 0 67 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M66.0732 8C66.0732 3.58172 62.4915 0 58.0732 0H8C3.58172 0 0 3.58172 0 8V55C0 59.4183 3.58172 63 8 63H58.0732C62.4915 63 66.0732 59.4183 66.0732 55V8ZM19.2267 50.5223C18.2061 50.1684 16.9145 50.6624 16.5967 51.6949L16.5337 51.8997C16.3062 52.6387 16.5886 53.454 17.2858 53.7882C17.8247 54.0466 18.3907 54.2576 18.9838 54.4213C20.0095 54.7044 21.1836 54.8459 22.5062 54.8459C24.7465 54.8459 26.528 54.5114 27.8505 53.8422C29.2001 53.1731 30.2123 52.2209 30.8871 50.9855C31.5619 49.7244 32.0072 48.2446 32.2232 46.546C32.4661 44.8474 32.5876 42.9816 32.5876 40.9484V29.2998C32.5876 28.0364 31.5634 27.0123 30.3 27.0123C29.0367 27.0123 28.0125 28.0364 28.0125 29.2998V41.5661C28.0125 43.1875 27.9315 44.5901 27.7696 45.7739C27.6346 46.9578 27.3647 47.9358 26.9598 48.7079C26.5819 49.4542 26.0151 50.0204 25.2593 50.4065C24.5306 50.7668 23.5724 50.9469 22.3847 50.9469C21.1701 50.9469 20.1175 50.8054 19.2267 50.5223ZM52.6421 52.1945C52.6421 53.4243 53.6391 54.4213 54.8689 54.4213C56.0987 54.4213 57.0957 53.4243 57.0957 52.1945V42.1065C57.0957 40.9999 57.0012 39.9576 56.8123 38.9796C56.6504 37.9759 56.3265 37.1009 55.8406 36.3545C55.3818 35.5824 54.734 34.9776 53.8972 34.5401C53.0875 34.1026 52.0483 33.8838 50.7797 33.8838C49.5381 33.8838 48.3639 34.064 47.2573 34.4243C46.1506 34.7846 45.1519 35.2993 44.2612 35.9685C43.552 36.4968 42.1559 35.9995 42.1559 35.1152C42.1559 34.63 41.7625 34.2313 41.2773 34.2313H40.1315C39.0135 34.2313 38.1071 35.1376 38.1071 36.2556V52.1945C38.1071 53.4243 39.1041 54.4213 40.3339 54.4213C41.5638 54.4213 42.5607 53.4243 42.5607 52.1945V43.6659C42.5607 42.8372 42.6523 41.9929 43.0568 41.2697C43.3172 40.8041 43.6377 40.3753 44.0183 39.9833C44.6931 39.2627 45.4488 38.6965 46.2856 38.2847C47.1493 37.8729 48.013 37.6671 48.8768 37.6671C50.1184 37.6671 51.0496 38.1046 51.6704 38.9796C52.3182 39.8546 52.6421 41.2315 52.6421 43.1103V52.1945Z"
+						></path>
+					</svg>
+					<div class="sr-only">Homepage</div>
+				</a>
+
+				<ThemeChanger />
+			</div>
+
+			<nav>
+				<div class="navLinks">
+					<div class="link">
+						<a href="/">Home</a>
+						<div class="underline"></div>
+					</div>
+
+					<div class="link">
+						<a href="/projects">Projects</a>
+						<div class="underline"></div>
+					</div>
+
+					<div class="link">
+						<a href="/contact">Contact</a>
+						<div class="underline"></div>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+</header>
+
+<style lang="scss">
+	header {
+		background: var(--c-paper);
+	}
+
+	.navbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: var(--s-2-4) 0;
+		z-index: 200;
+		position: relative;
+
+		.logo {
+			display: flex;
+			align-items: center;
+
+			svg {
+				height: 50px;
+				fill: var(--c-text);
+
+				@media (min-width: 768px) {
+					height: 70px;
+				}
+			}
+		}
+
+		.logoContainer {
+			display: flex;
+			align-items: center;
+			gap: 0.8rem;
+		}
+
+		nav {
+			display: flex;
+			align-items: flex-start;
+			gap: 0.8rem;
+			flex-direction: column;
+			position: relative;
+
+			.navLinks {
+				display: flex;
+				align-items: center;
+				gap: 1.6rem;
+
+				@media (min-width: 768px) {
+					gap: 3.2rem;
+				}
+
+				.link {
+					a {
+						font-size: 1.8rem;
+						font-weight: var(--fw-bold);
+						transition: var(--transition);
+						display: grid;
+						padding: 0.4rem 0.8rem;
+
+						@media (min-width: 768px) {
+							padding: 1.6rem;
+						}
+
+						&:hover,
+						&.active {
+							color: var(--c-accent);
+						}
+
+						&:first-child {
+							display: none;
+
+							@media (min-width: 768px) {
+								display: grid;
+							}
+						}
+					}
+
+					.underline {
+						height: 4px;
+						border-radius: 2px;
+						background-color: transparent;
+						transition: transform 0.5s, width 0.5s;
+						display: none;
+
+						@media (min-width: 768px) {
+							height: 4px;
+							display: block;
+						}
+					}
+
+					&.active {
+						a {
+							color: var(--c-accent);
+						}
+
+						.underline {
+							background-color: var(--c-accent);
+						}
+					}
+				}
+			}
+		}
+	}
+</style>

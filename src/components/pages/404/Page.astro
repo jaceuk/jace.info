@@ -1,0 +1,38 @@
+---
+import HeroImage from "@components/HeroImage.astro";
+import Borg from '@images/borg.jpg';
+import BorgDark from '@images/borg-dark.jpg';
+---
+
+<main class="with-gradient">
+  <div class="inner-wrapper">
+    <div class="container">
+      <div class="intro">
+        <h1>Error 404</h1>
+        <p class="subtitle">You will be assimilated, restistance is futile.</p>
+      </div>
+
+      <HeroImage image={Borg} darkImage={BorgDark} />
+    </div>
+  </div>
+</main>
+
+<style lang="scss">
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-2-4);
+    justify-content: space-between;
+    align-items: center;
+
+    .intro {
+      display: grid;
+      gap: var(--s-2-4);
+    }
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+</style>
