@@ -9,6 +9,7 @@ import '../styles/typography.css';
 import '../styles/vars.css';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import CookieNotice from '@components/CookieNotice.astro';
 
 const { title, description } = Astro.props;
 ---
@@ -21,20 +22,26 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		<script src=`https://www.google.com/recaptcha/api.js?render=6LfjPjsfAAAAAPQllouwQrnZ_mTdJjAacliDMDQ4` async defer></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VFXHZ7Q5NS"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+		<script
+			src=`https://www.google.com/recaptcha/api.js?render=6LfjPjsfAAAAAPQllouwQrnZ_mTdJjAacliDMDQ4`
+			async
+			defer></script>
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-VFXHZ7Q5NS"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
 
-      gtag('config', 'G-VFXHZ7Q5NS');
-    </script>
+			gtag('config', 'G-VFXHZ7Q5NS');
+		</script>
 	</head>
 	<body>
 		<Header />
 		<slot />
 		<Footer />
+		<CookieNotice />
 	</body>
 </html>

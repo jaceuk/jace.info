@@ -1,11 +1,67 @@
-<footer>
-	<div class="inner-wrapper">&copy; {new Date().getFullYear()} Jason Newington</div>
-</footer>
+---
+import Button from './Button.astro';
+---
 
-<style>
-	footer {
-		background: var(--section-background);
-		padding: var(--s-4-5) 0;
-		text-align: center;
+<script>
+	let cookieConsent = localStorage.getItem('cookieConsent') || false;
+	const cookieNotice = document.querySelector('.cookieNotice');
+	const acceptButton = document.querySelector('.button');
+
+	acceptButton?.addEventListener('click', acceptCookies, false);
+
+	function acceptCookies() {
+		console.log('click');
+		cookieConsent = true;
+		localStorage.setItem('cookieConsent', 'true');
+		cookieNotice?.remove();
+	}
+
+	if (cookieConsent) {
+		cookieNotice?.remove();
+	} else {
+		cookieNotice?.classList.remove('hidden');
+	}
+</script>
+
+<div class="cookieNotice hidden">
+	<div class="inner-wrapper">
+		<div class="content">
+			<p>
+				This website uses cookies for analytical purposes. By continuing to use this website you are
+				indicating that you are happy with this.
+			</p>
+			<Button>Accept</Button>
+		</div>
+	</div>
+</div>
+
+<style lang="scss">
+	.cookieNotice {
+		background: var(--c-paper);
+		box-shadow: 0px 4px var(--s-1-2) rgba(0, 0, 0, 0.25);
+		padding: var(--s-2-4) 0;
+		width: 100%;
+		position: fixed;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+		bottom: 0;
+		z-index: 999;
+
+		&.hidden {
+			display: none;
+		}
+
+		.content {
+			display: flex;
+			gap: var(--s-2-4);
+			align-items: center;
+			flex-direction: column;
+
+			@media (min-width: 768px) {
+				flex-direction: row;
+			}
+		}
 	}
 </style>
