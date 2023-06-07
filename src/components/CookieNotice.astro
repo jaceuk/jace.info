@@ -10,7 +10,6 @@ import Button from './Button.astro';
 	acceptButton?.addEventListener('click', acceptCookies, false);
 
 	function acceptCookies() {
-		console.log('click');
 		localStorage.setItem('cookieConsent', 'true');
 		cookieNotice?.remove();
 	}
