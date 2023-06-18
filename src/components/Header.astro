@@ -103,6 +103,14 @@ import ThemeChanger from './ThemeChanger.astro';
 				}
 
 				.link {
+					&:first-child {
+						display: none;
+
+						@media (min-width: 768px) {
+							display: grid;
+						}
+					}
+
 					a {
 						font-size: 1.8rem;
 						font-weight: var(--fw-bold);
@@ -117,14 +125,6 @@ import ThemeChanger from './ThemeChanger.astro';
 						&:hover,
 						&.active {
 							color: var(--c-accent);
-						}
-
-						&:first-child {
-							display: none;
-
-							@media (min-width: 768px) {
-								display: grid;
-							}
 						}
 					}
 
