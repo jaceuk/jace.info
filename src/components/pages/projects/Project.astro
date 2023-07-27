@@ -2,6 +2,8 @@
 import Card from '@components/Card.astro';
 import Lighthouse from './Lighthouse.astro';
 const { project } = Astro.props;
+
+const terms = Object.entries(project.tech);
 ---
 
 <div class="project">
@@ -19,11 +21,7 @@ const { project } = Astro.props;
 
 			<h3>Tech stack</h3>
 			<p class="tech">
-				{
-					project.tech.sort().map((term: string) => {
-						<span>{term}</span>;
-					})
-				}
+				{project.tech.join(', ')}
 			</p>
 			<Lighthouse scores={project.lighthouseScores} />
 		</Card>
