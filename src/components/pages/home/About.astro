@@ -14,7 +14,7 @@ import Card from '@components/Card.astro';
 			<div class="sections">
 				{
 					data.sections.map((section) => (
-						<Card>
+						<div class="section">
 							<h3>{section.title}</h3>
 
 							{section.text.map((paragraph) => (
@@ -22,7 +22,7 @@ import Card from '@components/Card.astro';
 							))}
 
 							{section.icons === 'skills' && <SkillIcons />}
-						</Card>
+						</div>
 					))
 				}
 			</div>
